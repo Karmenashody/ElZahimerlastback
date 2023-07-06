@@ -1,0 +1,107 @@
+	<!-- Navbar -->
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-white">
+        <!-- Container wrapper -->
+        <div class="container">
+          <!-- Toggle button -->
+          <button class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#collapse"
+          aria-controls="collapse"
+          aria-expanded="false"
+          aria-label="Toggle navigation">
+
+            <span class="navbar-toggler-icon"></span>
+            </button>
+
+          <!-- Collapsible wrapper -->
+          <div class="collapse navbar-collapse" id="collapse">
+            <!-- Navbar brand -->
+            <a class="navbar-brand mt-2 mt-sm-0" [routerLink]="['/HomePage']" routerLinkActive="active">
+                <i class="fa-solid fa-brain" style="color:#607D8B;font-size: 30px;"></i>
+            </a>
+            <!-- Left links -->
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <!-- ****************************** for all ************************************* -->
+              <li class="nav-item active">
+                <a class="nav-link "  [routerLink]="['/HomePage']" routerLinkActive="active">Home</a>
+              </li>
+
+              <!-- *****************************for all (not admin) *********************** -->
+              <li class="nav-item">
+                <a class="nav-link"  [routerLink]="['/showAllAricals']" routerLinkActive="active">Articles</a>
+              </li>
+              <!-- ******************************** helper ****************************************** -->
+              
+            <li class="nav-item">
+            <a class="nav-link" *ngIf="isLogin&&isHelper&&!isAdmin" [routerLink]="['/DisplayJobs']" routerLinkActive="active">DisplayJobs</a>
+          </li>
+
+              <!-- ******************************** patient ****************************************** -->
+              <!-- <li class="nav-item">
+                <a class="nav-link" *ngIf="isLogin&&!isHelper&&!isAdmin" [routerLink]="['/addproposal']" routerLinkActive="active">Helper Request</a>
+                
+              </li> -->
+           
+              <li class="nav-item">
+                <a class="nav-link" *ngIf="isLogin&&!isAdmin&&!isHelper" [routerLink]="['/Games']" routerLinkActive="active">Memory Games</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" *ngIf="isLogin&&!isHelper&&!isAdmin" [routerLink]="['/addproposal']" routerLinkActive="active">Request Help</a>
+              </li>
+               <li class="nav-item">
+                <a class="nav-link" *ngIf="isLogin&&!isHelper&&!isAdmin" [routerLink]="['/MyJob']" routerLinkActive="active"> My Requests</a>
+              </li>
+               <li class="nav-item">
+                <a class="nav-link" *ngIf="isLogin&&!isHelper&&!isAdmin" [routerLink]="['/DisplayTest']" routerLinkActive="active"> Quizzes</a>
+              </li>
+              <!-- *ngIf="isLogin&&isAdmin&&!isHelper" -->
+              <!-- ******************************** admin ****************************************** -->
+
+              <li class="nav-item">
+                <a class="nav-link" *ngIf="isLogin&&isAdmin" [routerLink]="['/addTest']" routerLinkActive="active">Add Quiz</a>
+              </li>
+              <!-- <li class="nav-item">
+                <a class="nav-link" *ngIf="isLogin&&isAdmin" [routerLink]="['/createAnswer']" routerLinkActive="active">Add Answer</a>
+              </li> -->
+              <li class="nav-item">
+                <a class="nav-link" *ngIf="isLogin&&isAdmin" [routerLink]="['/PendingUsers']" routerLinkActive="active">Pending Users</a>
+              </li>
+              <!-- <li class="nav-item">
+                <a class="nav-link" *ngIf="isLogin&&isAdmin" [routerLink]="['/createQuestion']" routerLinkActive="active">Create Question</a>
+              </li> -->
+              <li class="nav-item">
+                <a class="nav-link" *ngIf="isLogin&&isAdmin" [routerLink]="['/addArtical']" routerLinkActive="active">Add Article</a>
+              </li>
+           
+            <li class="nav-item">
+            <a class="nav-link" *ngIf="isLogin||!isAdmin" [routerLink]="['/chat']" routerLinkActive="active">Chat</a>
+          </li>
+            </ul>
+            <!-- Left links -->
+          <!-- Collapsible wrapper -->
+
+          <!-- Right elements -->
+            <!-- Icon -->
+            <ul class="navbar-nav mb-6 mb-lg-0">
+                <li class="nav-item active">
+                  <a class="nav-link " *ngIf='!isLogin' [routerLink]="['/Login']" routerLinkActive="active">Login</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" *ngIf='!isLogin' [routerLink]="['/BeforeRegister']" routerLinkActive="active">Register</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link alogout"  *ngIf='isLogin' (click)="logOut()" style="cursor:pointer">Logout</a>
+               
+                </li>
+           
+              </ul>
+          <!-- </div> -->
+          <!-- Right elements -->
+        </div>
+
+        </div>
+        <!-- Container wrapper -->
+      </nav>
+      <!-- Navbar -->

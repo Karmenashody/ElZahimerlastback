@@ -1,0 +1,23 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+<section style="margin: 50px;">
+    <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+        <div class="container ">
+            <div class="col-md-10 ">
+                <div class="row ">
+                    <div class="col-xl-3 col-lg-6" *ngFor="let item of exam">
+                        <a routerLink="/DisplayQuestionByExamId/{{item.id}}"> 
+                            <div class="card l-bg-blue-dark">
+                                <div class="card-statistic-3 p-4">
+                                    <div class="mb-4">
+                                        <h2 class="card-title mb-0 " >{{item.examName}}</h2>
+                                    </div>
+                                </div>
+                            </div>
+                         </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

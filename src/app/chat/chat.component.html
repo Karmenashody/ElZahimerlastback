@@ -1,0 +1,52 @@
+ <main>
+  <section >
+    <div class="container py-5">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card" id="chat3" style="border-radius: 15px;border:2px solid rgb(189, 189, 189);">
+            <div class="card-body">
+            
+               <div class="row">
+                <!-- <div class="col-md-6 col-lg-5 col-xl-4 mb-4 mb-md-0">
+                  
+                </div>  -->
+
+                <div class="col-md-12 col-lg-12 col-xl-12" >
+                    <div  class="pt-3 pe-3" data-mdb-perfect-scrollbar="true" style="position: relative; max-height: 320px; overflow: auto ">
+                      <ul  id="Chat" class="list-unstyled mb-0">
+                        <li class="p-2 border-bottom" >
+                            <div class="pt-1">
+                              <div  *ngFor="let mObj of Names"  class="d-flex flex-row justify-content-start" style="margin-top: 2%;">
+                                <div class="large p-2 me-3 mb-1 rounded-3 rightMsg"  style="width: 50%;" *ngIf="mObj.senderId == currentUser ">
+                                  <p style="color: white; font-size: small; font-style: oblique; font-weight: 600;">Me : </p>
+                                  <p class="large p-2 me-3 mb-1 rounded-3 rightMsg" style="width: 50%;" > {{ mObj.content }}</p>
+                                </div>
+
+                                <div style="width: 40%;" class="large p-2 me-3 mb-1 rounded-3 leftMsg" *ngIf="mObj.senderId != currentUser ">
+                                  <p style="width: 40%;" class="large p-2 me-3 mb-1 rounded-3 leftMsg"> {{ mObj.content }}</p>
+                                  <p style="color: rgb(123, 127, 127); font-size: small; font-style: oblique; font-weight: 600;">{{mObj.sender.userName}}</p>
+                                </div>
+                              </div> 
+                          </div>
+                        </li>
+                      </ul>
+                  </div>
+        
+                    <div class="text-muted d-flex justify-content-start align-items-center pe-3 pt-3 mt-2" style="justify-content: end;">
+                      <textarea class="form-control textarea-border"  id="textAreaExample"   rows="5" style="background: #fff;" [(ngModel)]="user.content" > </textarea>
+                      <!-- <input type="text" class="form-control form-control" id="exampleFormControlInput2" placeholder="Type message" style="border:2px solid rgb(189, 189, 189);" [(ngModel)]="userMesssage"/> -->
+                      <a class="ms-3" (click)="SendMessage($event)">
+                        <i style="font-size: xx-large; cursor: pointer; color:  #5283f5;" class="fa fa-paper-plane"></i>
+                      </a>
+                    </div> 
+                  </div>  
+                </div>
+              </div>
+              </div>
+            </div>
+          </div>
+        </div>
+  </section>
+</main>
+
+

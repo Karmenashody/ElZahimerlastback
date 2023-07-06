@@ -1,0 +1,26 @@
+<section style="margin: 50px;">
+  <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+      <div class="container ">
+        <div class="card mt-5" style="border-radius: 1rem;border:2px dashed gray;padding: 15px;">
+          <h1 style="color: #395a6b;text-align: center; font-family:Verdana, Geneva, Tahoma, sans-serif">{{testName}}</h1>
+          <div class="col-md-10 mx-5 m-3">
+            
+            <div *ngFor="let q of QANS ,let i=index">
+
+            <h2 style="color: #607d8b">{{i+1}}- {{q.question}}</h2>
+
+            <div *ngFor="let ans of q.answers" class="m-2">
+
+              <input type="radio" style="margin-left: 10px; margin-top: 5px;" value={{ans.ans}} [name]="q.qId" (click)="ChooseTheAnswer(i,$event)" >
+            
+              {{ans.ans}}
+
+            </div>
+
+            </div>
+            <button class="btn btn mt-2" style="background-color: #607d8b; color:white" (click)="Submitthedata()">Get Result</button>
+          </div>
+      </div>
+      </div>
+  </div>
+</section>

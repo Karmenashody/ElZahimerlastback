@@ -1,0 +1,168 @@
+<app-before-register #child style="display:none;" ></app-before-register>
+<section style="margin-top:50px ;">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center">
+      <div class="col col-lg-5">
+        <div class="card" style="border-radius: 1rem;border:2px dashed gray;">
+          <div class="row ">
+            <!-- <div class="col-md-8 col-lg-5 d-none d-md-block">
+              <img
+                src="assets/work.png"
+                alt="login form"
+                class="img-fluid"
+                style="border-radius: 1rem 0 0 1rem;"
+              />
+            </div> -->
+            <div class="col-lg-12 d-flex align-items-center">
+              <div class="card-body p-4 p-lg-7 text-black">
+
+                <div *ngIf='errors' class="alert alert-danger m-2">
+                  {{errors}}
+                </div>
+                <div class="alert mt-2 alert-danger" *ngIf="RegisterInvalid">
+                  <p>
+                    <i class="fa-solid fa-circle-exclamation"></i> 
+                    This username is Reserved !
+                  </p> 
+                </div>
+                <form [formGroup]="registerformh" (ngSubmit)='submitRegister(registerformh)'>
+                  <div class="d-flex align-items-center mb-3 pb-1">
+                    <span class="h1 fw-bold mb-0">Create an account</span>
+                  </div>
+                  <div class="form-outline mb-4">
+                    <input
+                      type="username"
+                      formControlName="username"
+                      id="form2Example17"
+                      class="form-control form-control-lg"
+                      placeholder="Username "
+                    />
+                    <!-- //error alert -->
+                    <div  class="alert mt-2 alert-danger" *ngIf="registerformh.get('username')?.errors != null 
+                    && registerformh.get('username')?.touched" >
+                      <p *ngIf="registerformh.get('username')?.errors?.['required'] "><i class="fa-solid fa-circle-exclamation"></i> username is required</p>
+                      <p *ngIf="registerformh.get('username')?.errors?.['pattern'] "><i class="fa-solid fa-circle-exclamation"></i> username must contains one Capital and small characters</p>
+                      <p *ngIf="registerformh.get('username')?.errors?.['forbiddenvalue'] "><i class="fa-solid fa-circle-exclamation"></i> username not allowed word [Admin or Adminstrator]</p>
+
+                    </div>
+                  </div>
+
+                    <!-- ************************************************************************* -->
+                    <div class="form-outline mb-4">
+                      <input
+                        type="number"
+                        formControlName="pricePerHour"
+                        class="form-control form-control-lg"
+                        placeholder="Price Per Hour"
+                      />
+                    
+                    </div>
+                    <div class="form-outline mb-4">
+                      <select formControlName="gender" style="border-radius: 25px;height: 50px;border:2px dashed rgb(184, 184, 184);font-weight:500px;width: 50%;padding:7px ;">
+                        <option value=0>
+                          Male
+                        </option >
+                        <option value=1>
+                          Female
+                        </option>
+                      </select>  
+                    </div>
+                    <!-- ************************************************************************* -->
+                    <div class="form-outline mb-4">
+                      <input
+                      type="text"
+                      formControlName="country"
+                      class="form-control form-control-lg"
+                      placeholder="country"
+                    />
+                    </div>
+                    <!-- ************************************************************************* -->
+                    <div class="form-outline mb-4">
+                      <input
+                      type="text"
+                      formControlName="city"
+                      class="form-control form-control-lg"
+                      placeholder="city"
+                    />
+                    </div>
+                    <!-- ************************************************************************* -->
+                    <div class="form-outline mb-4">
+                      <input
+                      type="text"
+                      formControlName="phoneNumber"
+                      class="form-control form-control-lg"
+                      placeholder="phone Number"
+                    />
+                    </div>
+                       <!-- ************************************************************************* -->
+                       <div class="form-outline mb-4">
+                        <input
+                        type="text"
+                        formControlName="nationalId"
+                        class="form-control form-control-lg"
+                        placeholder="National Id"
+                      />
+                      </div>
+                  <!-- ************************************************************************* -->
+                  <div class="form-outline mb-4">
+                    <!-- ngModel [(ngModel)]="usermodel.email" -->
+                    <input
+                      type="email"
+                      formControlName="email"
+                      id="form2Example17"
+                      class="form-control form-control-lg"
+                      placeholder="Email address"
+                    />
+                    <!-- //error alert -->
+                    <div style="height: 50px;" class="alert mt-2 alert-danger" *ngIf="registerformh.get('email')?.errors != null 
+                    && registerformh.get('email')?.touched" >
+                      <p *ngIf="registerformh.get('email')?.errors?.['required'] "><i class="fa-solid fa-circle-exclamation"></i> email is required</p>
+                      <p *ngIf="registerformh.get('email')?.errors?.['pattern'] "><i class="fa-solid fa-circle-exclamation"></i> email must contains @ </p>
+                      <!-- <p>email must contians @</p> -->
+                    </div>
+                    <!-- <label class="form-label" for="form2Example17">Email address</label> -->
+                  </div>
+<!-- ************************************************************************* -->
+                  <div class="form-outline mb-4">
+                    <!-- [(ngModel)]="usermodel.password" ngModel -->
+                    <input
+                      type="password"
+                      formControlName="password"
+                      id="form2Example27"
+                      class="form-control form-control-lg"
+                      placeholder="Password"
+                    />
+                    <div style="height: 50px;" class="alert mt-2 alert-danger" *ngIf="registerformh.get('password')?.errors != null 
+                    && registerformh.get('password')?.touched" >
+                      <p *ngIf="registerformh.get('password')?.errors?.['required'] "><i class="fa-solid fa-circle-exclamation"></i> password is required</p>
+                      <p *ngIf="registerformh.get('password')?.errors?.['minlength']"><i class="fa-solid fa-circle-exclamation"></i> password must be at least 8 characters.</p>
+
+                      <!-- <p>email must contians @</p> -->
+                    </div>
+                    <!-- <label class="form-label" for="form2Example27">Password</label> -->
+                  </div>
+            <!-- ************************************************************ -->
+            <input type="file" formControlName="image" class="form-control mb-2" id="formFile"
+            (change)="onSelectFile($event)" />
+
+                  <div class=" mb-4">
+                    <button [disabled]="registerformh.invalid" class="btn btn-lg btn-block" data-mdb-toggle="modal" data-mdb-target="#exampleModal" type="submit" style="color: white;background-color:#607D8B;width: 100%;" >
+                      SignUp
+                    </button>
+                  </div>
+                  <!-- <a class="small text-muted" href="#!">Forgot password?</a> -->
+                  <p class="mb-5 pb-lg-2" style="color: #5760c0">
+                    Have already an account?
+                    <a [routerLink]="['/Login']" style="color: #393f81"
+                      >Login here</a
+                    >
+                  </p>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

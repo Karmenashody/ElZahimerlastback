@@ -1,0 +1,48 @@
+   <div class="bg-img">
+<div class="vh-100 d-flex justify-content-center align-items-center">
+  <div class="container">
+    <div class="row d-flex justify-content-center">
+      <div class="col-12 col-md-8 col-lg-6">
+        <div class="card bg-white">
+          <div class="card-body p-4">
+            <form
+              class="mb-1 mt-md-1 "
+              [formGroup]="formdata"
+              (ngSubmit)="submitTheRequest(formdata.value)" >
+
+               <h2 class="mb-2 " style="color: #607D8B">Do you want to request Help?</h2>
+              <div class="mb-3" class="form-group my-1">
+                <label class="form-label" style="color: #607D8B" >Description : </label>
+                <input
+                  type="text"
+                  formControlName="discription"
+                  class="form-control"
+                />
+              </div>
+              <div class="mb-3">
+                <label style="color: #607D8B">Date :</label>
+                <input
+                  type="date"
+                  formControlName="date"
+                  class="form-control"
+                />
+                
+              <div class="text-center">
+              <input
+                type="submit"
+                [disabled]="formdata.invalid"
+                class="btn mt-3 w-25"
+                value="Add" style="background-color: #607D8B;color:white; justify-content: center;" 
+              />
+            </div>
+          </div>
+            </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+

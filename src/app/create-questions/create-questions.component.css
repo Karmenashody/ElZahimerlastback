@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo&display=swap');
+section{
+    direction: rtl;
+    font-family: 'Cairo', sans-serif;
+}
+label , input[type="radio"]{
+    display: flex;
+    justify-content:start; 
+    font-size: 20px;
+}
+input[type="text"]{
+    border-bottom: 1px solid gray;
+    border-top: 1px dotted transparent;
+    border-left: 1px dotted transparent;
+    border-right: 1px dotted transparent;
+
+    /* border: transparent transparent red transparent; */
+}
+button{
+    margin-left: 5px;
+}

@@ -1,0 +1,78 @@
+<section class="vh-100" style="margin-top:50px ;">
+    <div class="container py-5 h-90" >
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col col-xl-8">
+          <div class="card" style="border-radius: 1rem;border:2px dashed gray;">
+            <div class="row g-0">
+              <div class="col-md-6 col-lg-5 d-none d-lg-block">
+                <img src="assets/patient.png"
+                  alt="login form" class="img-fluid" style="border-radius: 1rem 0 0 1rem;display: flex;margin: 80px 30px 30px 30px;" />
+              </div>
+              <div class="col-md-6 col-lg-7 d-flex align-items-center">
+                <div class="card-body p-4 p-lg-5 text-black">
+  
+                  <form [formGroup]="Loginform" (ngSubmit)='submitLogin(Loginform)'>
+  
+                    <div class="alert mt-2 alert-danger" *ngIf="loginInvalid">
+                      <p>
+                        <i class="fa-solid fa-circle-exclamation"></i> 
+                        The username or password were not recognised
+                      </p> 
+                    </div>
+
+                    <div class="d-flex align-items-center mb-2 pb-1">
+                      <span class="h1 fw-bold mb-0" style="color: #1b1e44;font-size:26px ;">Sign in your Account</span>
+                    </div>
+  
+                    <!-- <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Sign into your account</h5> -->
+  
+                    <div class="form-outline mb-4">
+                      <input
+                        type="username"
+                        formControlName="username"
+                        id="form2Example17"
+                        class="form-control form-control-lg"
+                        placeholder="Username "
+                      />
+                      <div  class="alert mt-2 alert-danger" *ngIf="Loginform.get('username')?.errors != null 
+                      && Loginform.get('username')?.touched" >
+                        <p *ngIf="Loginform.get('username')?.errors?.['required'] "><i class="fa-solid fa-circle-exclamation"></i> username is required</p>
+                        <p *ngIf="Loginform.get('username')?.errors?.['pattern'] "><i class="fa-solid fa-circle-exclamation"></i> username must contains one Capital and small characters</p>
+                        <p *ngIf="Loginform.get('username')?.errors?.['forbiddenvalue'] "><i class="fa-solid fa-circle-exclamation"></i> username not allowed word [Admin or Adminstrator]</p>
+  
+                      </div>
+                    </div>
+  
+                    <div class="form-outline mb-4">
+                      <input type="password" id="form2Example27" formControlName="password" class="form-control form-control-lg" placeholder="Password"/>
+                      <!-- <label class="form-label" for="form2Example27">Password</label> -->
+                    
+                      <div style="height: 50px;" class="alert mt-2 alert-danger" *ngIf="Loginform.get('password')?.errors != null 
+                      && Loginform.get('password')?.touched" >
+                        <p *ngIf="Loginform.get('password')?.errors?.['required'] "><i class="fa-solid fa-circle-exclamation"></i> password is required</p>
+                        <p *ngIf="Loginform.get('password')?.errors?.['pattern'] "><i class="fa-solid fa-circle-exclamation"></i> password must contains digits and letter [2-8]</p>
+                        <!-- <p>email must contians @</p> -->
+                      </div>
+                    </div>
+  
+                    <div class="pt-1 mb-4">
+                      <button class="btn btn-lg btn-block" [disabled]="Loginform.invalid" type="submit" style="background-color:#607D8B;color: white;width: 100%;">Login</button>
+                    </div>
+  
+                    <!-- <div class="pt-1 mb-4">
+                      <button class="btn btn-lg btn-block" type="button" (click)="status()" style="background-color:red;color: white;width: 100%;">if New user , Check Status</button>
+                    </div> -->
+                    <a class="small text-muted" href="#!">Forgot password?</a>
+                    <p class="mb-5 pb-lg-2" style="color: #5760c0;">Don't have an account? <a [routerLink]="['/BeforeRegister']"
+                        style="color: #393f81;">Register here</a></p>
+                  </form>
+  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+

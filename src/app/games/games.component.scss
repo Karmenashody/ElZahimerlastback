@@ -1,0 +1,55 @@
+.game-board {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+    width: fit-content;
+  }
+  
+  .card {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    perspective: 1000px;
+    cursor: pointer;
+    transition: transform 1s;
+  }
+  
+  .front, .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility:  var(--display_card);;
+    transform-style: preserve-3d;
+  }
+  
+  .front {
+    background-color: #ccc;
+    transform: rotateY(180deg);
+  }
+  
+  .back {
+    background-image: url("../../assets/question.png");
+    // background-image: url("../../assets/question.png");
+    // background-image: url("../../assets/question\ \(1\).png");
+
+    background-size: contain;
+    // transform: rotateY(180deg);
+  }
+  
+  .front-flipped {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    transform-style: preserve-3d;
+    transition: transform 1s;
+    transform: rotateY(180deg)
+  }
+  
+  .flipped {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 1s;
+    transform: rotateY(-180deg);
+  }

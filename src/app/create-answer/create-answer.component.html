@@ -1,0 +1,64 @@
+<!-- <app-create-questions item ="we" style="display: none;"> </app-create-questions> -->
+<!-- <app-add-test we="w" style="display: none;"> </app-add-test> -->
+
+<section style="margin: 40px; margin-top: 100px;" >
+    <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+        <div class="container ">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-12 col-md-11 col-lg-7 col-xl-8">
+                    <div class="card" style="border-radius: 15px;border:1px dashed rgb(192, 192, 192);">
+                        <div class="card-body p-5">
+                            <div class="row mb-4">
+                                <form [formGroup]="AnswerFom">
+                                    <div class="row">
+                                        <div class="form-outline mb-4">
+                                            <!-- <label class="form-label" for="form12">Answer</label>
+                                            <input style="border:1px solid gray;" type="text" id="ans"
+                                                class="form-control col col-lg-8"  formControlName="ans"/>
+                                            <input style="border:1px solid gray;" type="number" id="ans"
+                                                class="form-control col col-lg-4"  formControlName="score"/> -->
+                                        <!-- </div> -->
+                                      
+                                        <div class="input-group mb-3">
+                                            <input style="border:2px dashed gray;background-color:white;width: 20%;border-radius:8px ;" class="input-group-text" id="search-addon" type="number" formControlName="score" placeholder="Score"/>
+                                            <input
+                                            style="margin-left:2px ;"
+                                              type="text"
+                                              class="form-control rounded"
+                                              formControlName="ans"
+                                              placeholder="Answer..."
+                                              aria-label="Search"
+                                              aria-describedby="search-addon"
+                                            />
+                                          </div>
+                                        </div>
+
+
+
+                                        <!-- **************************************** -->
+                                      <!-- <div class="input-group">
+                                        <div class="input-group-text">
+                                          <input class="form-control"  id="ans" formControlName="ans" type="number" value="" style="width:50px ;height: 29px;display:flex;text-align: center;"  placeholder="Score"/>
+                                        </div>
+                                        <input type="text"  id="score"  formControlName="score" class="form-control" placeholder="Answer"/>
+                                      </div>
+                                    </div> -->
+
+                                    </div> 
+
+                                    <!-- ********************************************************************* -->
+                                    <div style="display:flex;justify-content: start;margin-top: 40px;">
+                                            <button type="submit" (click)="AddAnthor(AnswerFom)"
+                                            style="width: 150px;height: 60px;border-radius: 35px;background-color:#607D8B;border: 1px solid transparent;color: white;margin-right: 5px;">Another Answer</button>
+                                            <button type="submit" (click)="AddAnthorques(AnswerFom)"
+                                            style="width: 150px;height: 60px;border-radius: 35px;background-color:#946b64f6;border: 1px solid transparent;color: white;">Another Question</button>
+                                    </div> 
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

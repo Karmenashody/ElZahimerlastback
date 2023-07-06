@@ -1,0 +1,32 @@
+<!-- <app-create-answer [message]="testid"></app-create-answer> -->
+<section style="margin: 40px; margin-top: 100px;" >
+    <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+        <div class="container ">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-12 col-md-11 col-lg-7 col-xl-8">
+                    <div class="card" style="border-radius: 15px;border:1px dashed rgb(192, 192, 192);">
+                        <div class="card-body p-5" dir="ltr">
+                            <div class="row mb-4">
+                                <form [formGroup]="QuestionFom"  >
+                                    <div class="form-outline mb-4">
+                                        <label class="form-label" for="form12">Question</label>
+                                        <input style="border:1px solid gray;" type="text" id="question"
+                                            class="form-control"  formControlName="question"/>
+                                    </div>
+                                    <!-- ********************************************************************* -->
+                                    <div style="display:flex;justify-content: start;margin-top: 40px;">
+                                            <button (click)="save(QuestionFom)" type="submit" 
+                                            style="width: 150px;height: 50px;border-radius: 25px;background-color:#607D8B;border: 1px solid transparent;color: white;cursor: pointer;">Next</button>
+                                    
+                                            <button (click)="end(QuestionFom)" type="button" 
+                                            style="width: 150px;height: 50px;border-radius: 25px;background-color:rgb(160, 72, 72);border: 1px solid transparent;color: white;cursor: pointer;">End</button>
+                                    </div> 
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

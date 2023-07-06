@@ -1,0 +1,79 @@
+<app-before-register #child style="display:none;" ></app-before-register>
+<section style="margin-top:50px ;">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center">
+      <div class="col col-lg-5">
+        <div class="card" style="border-radius: 1rem;border:2px dashed gray;">
+          <h2 style="padding:20px">Pending Patients</h2>
+
+          <div class="row">
+            <div class="col col-lg-12">
+              <table class="table">
+                <thead style="padding: 20px;">
+                    <tr >
+                        <th></th>
+                        <th>UserName</th>
+                        <th>Confirm</th>
+                        <th>Reject</th>
+                        <th>View</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let user of patients">
+                        <td scope="row"></td>
+                        <td>{{user.user.userName}} </td>
+                        
+                        <td><button class="btn btn-info " style="color:white ;" (click)="ConfirmPatients(user.id)" >Confirm</button></td>
+                        <td><button class="btn btn-danger" style="color:white ;" (click)="RejectPatients(user.id)">Reject</button></td>
+                        <td><button class="btn btn-primary" style="color:white ;" (click)="ViewPatient(user.id)" >View</button></td>
+    
+                    </tr>
+                    <tr>
+                        <td scope="row"></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+               </table>
+            </div>
+          </div>
+        </div>
+        <div class="card mt-2" style="border-radius: 1rem;border:2px dashed gray;">
+          <h2 style="padding:20px">Pending Helpers</h2>
+          <div class="row ">
+            <div class="col col-lg-12">
+            <table class="table">
+            <thead style="padding: 20px;">
+              <tr >
+                  <th></th>
+                  <th>UserName</th>
+                  <th>Confirm</th>
+                  <th>Reject</th>
+              </tr>
+          </thead>
+            <tbody>
+                <tr *ngFor="let user of helpers">
+                    <td scope="row"></td>
+                    <td>{{user.user.userName}} </td>
+                    
+                    <td><button class="btn btn-info " style="color:white ;" (click)="ConfirmHelpers(user.id)" >Confirm</button></td>
+                    <td><button class="btn btn-danger" style="color:white ;" (click)="RejectHelpers(user.id)">Reject</button></td>
+                    <td><button class="btn btn-danger" style="color:white ;" (click)="ViewHelper(user.id)">View</button></td>
+
+                </tr>
+                <tr>
+                    <td scope="row"></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+           </table>
+          </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>

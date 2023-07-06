@@ -1,0 +1,64 @@
+<section style="margin: 35px;margin-top: 100px;">
+  <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+    <div class="container ">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-11 col-lg-7 col-xl-8">
+          <div class="card" style="border-radius: 15px;">
+            <div class="card-body p-5">
+              <h1 class="text text-center mb-5" style="font-family: 'Nanum Myeongjo', serif;font-size: 34px;">Join as a Helper or Patient</h1>
+
+              <form [formGroup]="dataform" >
+                <div class="row d-flex justify-content-center align-items-center h-100" style="margin: 20px;">
+                    <div  class="col-xl-5 col-lg-5 mr-3 col-sm-12" style="border:3px solid #607D8B;border-radius: 10px;margin-top: 10px;margin-right: 10px;">
+                     <div style="display: flex;justify-content: space-between;padding: 12px;">
+                        <img src="../../assets/patient.png" alt="" style="max-width:100px;">
+                        <div>
+                          <input id="IsPatient" type="radio" value="Patient" name="IsPatient" formControlName="IsPatient" 
+                          [(ngModel)]="namePro" (click)="PatientRole(dataform)">
+                          <!-- (click)="freeRole()" -->
+                          <label for="IsPatient"></label>
+                       </div>
+                        </div>
+                        <div id="btn" style="padding: 20px;font-size: 19px;font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;font-weight: 900;">
+                          I’m a Patient, Ask for Help !
+
+                        </div>
+                      </div>
+                    <div id="btn" class="col-xl-5 col-lg-5 mr-3 col-sm-12" style="border:3px solid #607D8B;border-radius: 10px;margin-top: 10px;" >
+                      <div style="display: flex;justify-content: space-between;padding: 12px;">
+                        <img src="../../assets/elderly.png" alt="" style="max-width:100px;margin-left: 3px;">   
+                        <div>
+                            <input id="IsHelper" type="radio" value="Helper" name="IsHelper" formControlName="IsHelper" 
+                            [(ngModel)]="namePro" (click)="HelperRole(dataform)">
+                            
+                            <label for="IsHelper"></label>
+                         </div>
+                       </div>
+                       <div style="padding: 20px;font-size: 19px;font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;font-weight: 900;">
+                        I’m a Helper, I will help 
+
+                    </div>
+                  </div>
+                </div>
+                <!-- <div class="d-flex justify-content-center">
+                  <button type="submit" 
+                    [disabled]="dataform.invalid"
+                    
+                    
+                    class="btn btn-block btn-lg" style="width:50%;border-radius: 25px;background-color: #607D8B;color:white;font-size:16px"
+                    >
+                    Apply as  {{namePro}}</button>
+                </div> -->
+
+                <p class="text-center text-muted mt-5 mb-0">Have already an account? <a href="#!"
+                    class="fw-bold text-body" [routerLink]="['/Login']"><u>Login here</u></a></p>
+
+              </form>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

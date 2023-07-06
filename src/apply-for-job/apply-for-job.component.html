@@ -1,0 +1,47 @@
+
+<section style="margin-top:50px ;">
+    <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center">
+            <div class="col col-lg-8">
+                <div class="card" style="border-radius: 1rem;border:2px dashed gray;padding: 15px;">
+                    <div class="card-body">
+                        Description: <h5 class="card-title" style="color: #607d8b"> {{job.discription}}</h5>
+                        Date:  <h5 class="card-text" style="color: #607d8b">{{job.date}}</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card mt-5 " style="border-radius: 1rem;border:2px dashed gray;padding: 15px;">
+
+            <form class="mb-3 mt-md-2  " [formGroup]="formda" (ngSubmit)="submitTheArtical(formda)">
+
+                <div class="mb-3" class="form-group my-1">
+                    <label class="form-label" style="font-weight: bold; color: #607d8b">Description </label>
+                    <input type="text" formControlName="discription" class="form-control" />
+                </div>
+                <div class="mb-3" class="form-group my-1">
+                    <label class="form-label" style="font-weight: bold;color: #607d8b">Price per Hour</label>
+                    <textarea formControlName="price" class="form-control"></textarea>
+                </div>
+                <div class="mb-3" class="form-group my-1">
+                    <label class="form-label" style="font-weight: bold;color: #607d8b">Phone number</label>
+                    <textarea formControlName="phoneNumber" class="form-control"></textarea>
+                </div>
+
+                <!-- <div class="mb-3" class="form-group my-1">
+                    <label class="form-label" style="font-weight: bold;color: #607d8b">Date</label>
+                    <input formControlName="date" class="form-control" type="date"/>
+                </div> -->
+            
+                <input class="mt-3" type="submit" value="Add Proposal" style="background-color:#607D8B;color: white;border: 1px solid transparent;height: 50px;border-radius: 25px;width: 150px;">
+            </form>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+

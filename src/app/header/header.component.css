@@ -1,0 +1,29 @@
+nav{
+    /* background-color: #607D8B; */
+    /* color: white; */
+}
+li a{
+    padding: 12px;
+    font-size: 18px;
+    display: flex;
+}
+.navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .show>.nav-link{
+    /* background-color: #607D8B; */
+
+}
+.navbar-light .navbar-nav .nav-link{
+    font-weight: bold;
+    color: rgba(33, 37, 41, 0.75);
+    border-radius: 25px;
+}
+.navbar-light .navbar-nav .nav-link:hover{
+    /* background-color:#804174; */
+    background-color: #607D8B;
+    color: white;
+    border-radius: 25px;
+}
+.alogout:hover{
+    /* background-color:#804174; */
+    background-color: #607D8B;
+    color: white;
+}

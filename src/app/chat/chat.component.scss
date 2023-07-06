@@ -1,0 +1,126 @@
+.textarea-border{
+  border: #0069d9 1px solid;
+}
+#chat3 .form-control {
+    border-color:transparent;
+    }
+    
+    #chat3 .form-control:focus {
+    border-color: transparent;
+    box-shadow: inset 0px 0px 0px 1px transparent;
+    }
+    
+    .badge-dot {
+    border-radius: 50%;
+    height: 10px;
+    width: 10px;
+    margin-left: 2.9rem;
+    margin-top: -.75rem;
+    }
+
+    .rightMsg {
+        background-color: #404c68;
+        color: #fff;
+        margin-left: auto;
+      }
+    .leftMsg {
+        background-color: #f1f0f0;
+        margin-right: auto;
+      }
+
+      .ud-flex-row {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 10px;
+      }
+      
+      .msg-input {
+        flex: 1;
+        height: 36px;
+        margin-right: 10px;
+        padding: 5px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 14px;
+      }
+      
+      .send-btn {
+        background-color: #404c68;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        padding: 5px 10px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+      
+      .send-btn:hover {
+        background-color: #0069d9;
+      }
+
+      .list-unstyled {
+        padding: 0;
+        margin: 0;
+      }
+      
+      .list-unstyled li {
+        padding: 10px;
+        border-bottom: 1px solid #ccc;
+      }
+      
+      .list-unstyled li a {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        text-decoration: none;
+        color: #333;
+      }
+      
+      .list-unstyled li a:hover {
+        background-color: #f5f5f5;
+      }
+      
+      .badge {
+        display: inline-block;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        margin-right: 5px;
+      }
+      
+      .badge-dot {
+        background-color: #5cb85c;
+      }
+      
+      .pt-1 {
+        padding-top: 0.25rem;
+      }
+      
+      .mb-0 {
+        margin-bottom: 0;
+      }
+      
+      .text-muted {
+        color: #999;
+        font-size: 0.9rem;
+      }
+      
+      .sent {
+        background-color: #e6e6e6;
+        color: #333;
+        border-radius: 10px;
+        padding: 10px;
+        margin: 10px;
+        float: right;
+      }
+      
+      .received {
+        background-color: #428bca;
+        color: #fff;
+        border-radius: 10px;
+        padding: 10px;
+        margin: 10px;
+        float: left;
+      }
